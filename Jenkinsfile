@@ -7,13 +7,10 @@ pipeline {
                }
                      }
         stage('Maven') { 
-         tool name: 'Maven', type: 'maven'   
+         def mvnhome = tool name: 'Maven', type: 'maven'   
          steps {
-             withMaven(maven: 'mvn')
-             {
-            sh "mvn clean install" 
+             sh "$mvnhome/bin/mvn clean install" 
              }
           }
        }
     }
-}
