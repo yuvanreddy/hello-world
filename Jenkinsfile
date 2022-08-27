@@ -6,10 +6,10 @@ pipeline {
             git url: "https://github.com/yuvanreddy/hello-world.git" 
                }
                      }
-        stage('Maven') { 
-         def mvnhome = tool name: 'Maven', type: 'maven'   
-         steps {
-             sh "$mvnhome/bin/mvn clean install" 
+        stage('Maven')
+        steps { 
+             def mvnhome = tool name: 'Maven', type: 'maven'   
+            sh "$mvnhome/bin/mvn clean install" 
              }
           }
        }
