@@ -6,5 +6,10 @@ pipeline {
             git url: "https://github.com/yuvanreddy/hello-world.git" 
             }
         }
+        stage('Maven') { 
+         steps {
+            mvn clean install 
+            }
+        }
      }
 }
