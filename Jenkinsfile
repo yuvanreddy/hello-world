@@ -1,13 +1,12 @@
-pipeline {
-  agent any
-  {
-    stages{
-  stage ('Build') {
-    git url: 'https://github.com/yuvanreddy/hello-world.git'
-    withMaven {
-      sh "mvn clean verify"
+pipeline{
+  agent none
+  stages{
+    stage ('Build') {
+      agent any
+      steps{
+        git url: 'https://github.com/yuvanreddy/hello-world.git'
+        sh "mvn clean verify"
     } 
    }
   }
  }
-}
