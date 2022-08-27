@@ -1,10 +1,11 @@
-pipeline {
- agent any
-  {
-  stages{
-     stage'Test'(){
-     sh "echo This is for test"
+pipeline{
+ agent none
+ stages{
+      stage('Test'){
+        agent any
+       steps{
+        sh 'echo This is for test'
      }
-     }    
-   }
-   }
+   }  
+  }
+}
