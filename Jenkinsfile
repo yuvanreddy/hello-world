@@ -1,22 +1,10 @@
-pipeline {
-    agent any
-    tools { 
-        Maven '3.8.6' 
-           }
-    stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+pipeline { 
+    agent any  
+    stages { 
+        stage('Git') { 
+         steps { 
+            git url: https://github.com/yuvanreddy/hello-world.git" 
             }
         }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
-            }
-        }
-    }
+     }
 }
