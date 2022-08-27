@@ -1,5 +1,8 @@
 pipeline{
   agent none
+  tools { 
+      maven 'MAVEN_HOME' 
+      jdk 'JAVA_HOME'
   stages{
     stage ('Build') {
       agent any
@@ -10,3 +13,4 @@ pipeline{
    }
   }
  }
+}
