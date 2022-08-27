@@ -7,6 +7,7 @@ pipeline {
                }
                      }
         stage('Maven') { 
+         tool name: 'Maven', type: 'maven'   
          steps {
              withMaven(maven: 'mvn')
              {
