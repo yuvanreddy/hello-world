@@ -11,6 +11,5 @@ pipeline {
              def mvnhome = tool name: 'Maven', type: 'maven'   
             sh "$mvnhome/bin/mvn clean install" 
              }
-          }
-       }
-    }
+         }
+     }
