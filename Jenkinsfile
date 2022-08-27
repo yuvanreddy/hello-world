@@ -6,12 +6,12 @@ pipeline{
        steps{
         sh 'echo This is for test'
      }
+      }
       stage('install'){
         agent any
        steps{
         sh 'mvn clean install'
    }
   }
-}
-}
+ }
 }
